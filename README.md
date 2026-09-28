@@ -52,35 +52,36 @@ This project provides an intelligent solution by:
 ## 📂 Project Structure
 
 ```text
-intelligent-traffic-management/
+
+Intelligent-Traffic-Management-/
 │
 ├── dashboard.py
 ├── requirements.txt
 ├── README.md
-├── .env
+├── .env.example
+├── .gitignore
+├── Dataset Download Link.docx
+├── yolov8n.pt
 │
-├── dataset/
+├── assets/
 │
 ├── models/
 │   └── yolov8n.pt
 │
-├── modules/
-│   ├── database.py
-│   ├── detector.py
-│   ├── video_processor.py
-│   ├── vehicle_detector.py
-│   ├── vehicle_counter.py
-│   ├── report_generator.py
-│   ├── dashboard_utils.py
-│   ├── llm_service.py
-│   ├── prompt_builder.py
-│   ├── signal_controller.py
-│   ├── traffic_density.py
-│   └── video_writer.py
-│
-├── output/
-│
-└── temp/
+└── modules/
+    ├── database.py
+    ├── detector.py
+    ├── video_processor.py
+    ├── vehicle_detector.py
+    ├── vehicle_counter.py
+    ├── report_generator.py
+    ├── dashboard_utils.py
+    ├── llm_service.py
+    ├── prompt_builder.py
+    ├── signal_controller.py
+    ├── traffic_density.py
+    └── video_writer.py
+
 ```
 
 ---
@@ -92,7 +93,7 @@ intelligent-traffic-management/
 ```bash
 git clone https://github.com/kunjum005/Intelligent-Traffic-Management-.git
 
-cd intelligent-traffic-management
+cd Intelligent-Traffic-Management-
 ```
 
 ---
@@ -146,22 +147,17 @@ Import the required SQL table if provided.
 
 ---
 
-## 5. Configure Google Gemini API
+### 5. Configure Google Gemini API
 
 Create a file named:
 
-```text
 .env
-```
 
-Add your Gemini API key:
+Copy the configuration from .env.example and add your Gemini API key:
 
-```env
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-```
 
 You can generate an API key from:
-
 https://aistudio.google.com/app/apikey
 
 ---
@@ -308,6 +304,14 @@ The Streamlit dashboard provides:
 
 ---
 
+# 🌐 Application Type
+
+This project is implemented as a web-based application using Streamlit.
+
+The Streamlit dashboard provides the user interface, while the Python modules perform vehicle detection, video processing, traffic analysis, signal timing recommendation, AI report generation, and database operations.
+
+---
+
 # Future Scope
 
 - Live CCTV Integration
@@ -327,6 +331,12 @@ Traffic videos used for testing can be downloaded from Kaggle:
 
 https://www.kaggle.com/datasets/arshadrahmanziban/traffic-video-dataset
 
+The project also includes a document named:
+
+Dataset Download Link.docx
+
+which contains the dataset download information.
+
 ---
 
 # Output
@@ -344,10 +354,12 @@ The system generates:
 
 # Note
 
-- This project uses a **pre-trained YOLOv8 model** for vehicle detection.
-- The project performs **inference** on uploaded traffic videos and does **not train** the YOLO model.
+- This project uses a pre-trained YOLOv8 model for vehicle detection.
+- The project performs inference on uploaded traffic videos and does not train the YOLO model.
 - Google Gemini API is required for AI-generated traffic analysis.
 - MySQL (XAMPP) must be running before starting the application.
+- The .env file should contain the user's API key and should not be committed to GitHub.
+- The .env.example file is provided as a template for configuration.
 
 ---
 
@@ -359,6 +371,4 @@ B.Tech – Computer Science & Engineering (AI & ML)
 
 ---
 
-# License
 
-This project is developed for academic and educational purposes.
