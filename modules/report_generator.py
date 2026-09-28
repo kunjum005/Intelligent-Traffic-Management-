@@ -6,6 +6,7 @@ from an input video.
 """
 
 import cv2
+import time
 
 from modules.vehicle_detector import (
     detect_vehicles,
@@ -59,6 +60,8 @@ def generate_report(
 
     # Store last detections
     last_vehicle_boxes = []
+    
+    start_time = time.time()
 
     while True:
 
@@ -97,6 +100,15 @@ def generate_report(
 
     cap.release()
     out.release()
+    
+    end_time = time.time()
+
+    processing_time = end_time - start_time
+
+    fps = processed_frames / processing_time
+
+    print(f"Processing Time: {processing_time:.2f} seconds")
+    print(f"Average FPS: {fps:.2f}")
 
     if processed_frames == 0:
         processed_frames = 1

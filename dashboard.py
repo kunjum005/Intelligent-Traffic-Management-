@@ -197,12 +197,24 @@ if st.session_state.report is not None:
 
     section("🤖 AI Traffic Analysis")
 
-    if st.session_state.ai_report is not None:
-        st.success("✅ AI Report Generated")
-        st.markdown(st.session_state.ai_report)
+    if st.session_state.ai_report:
+
+        if "RESOURCE_EXHAUSTED" in st.session_state.ai_report:
+            st.warning("⚠️ Google Gemini API quota exceeded. Please try again later.")
+
+        elif "NOT_FOUND" in st.session_state.ai_report:
+            st.warning("⚠️ Gemini model is unavailable. Please update the model name in llm_service.py.")
+
+        elif st.session_state.ai_report.startswith("Error:"):
+            st.warning(st.session_state.ai_report)
+
+        else:
+            st.success("✅ AI Report Generated")
+            st.markdown(st.session_state.ai_report)
+
     else:
         st.warning("AI report could not be generated.")
-    st.divider()
+        st.divider()
 
     # -------------------------------------
     # Database History
