@@ -21,7 +21,7 @@ This project provides an intelligent solution by:
 
 ## 🚀 Features
 
-- 🚗 Real-time Vehicle Detection using YOLOv8
+- 🚗 Vehicle Detection using YOLOv8
 - 🎥 Traffic Video Processing using OpenCV
 - 📊 Traffic Density Analysis
 - 🚦 Intelligent Signal Time Recommendation
@@ -151,6 +151,7 @@ Import the required SQL table if provided.
 
 Create a file named:
 
+```text
 .env
 
 Copy the configuration from .env.example and add your Gemini API key:
@@ -312,7 +313,7 @@ The Streamlit dashboard provides the user interface, while the Python modules pe
 
 ---
 
-# Future Scope
+# 🔮 Future Scope
 
 - Live CCTV Integration
 - Emergency Vehicle Detection
