@@ -90,7 +90,7 @@ intelligent-traffic-management/
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/kunjum005/intelligent-traffic-management.git
+git clone https://github.com/kunjum005/Intelligent-Traffic-Management-.git
 
 cd intelligent-traffic-management
 ```
